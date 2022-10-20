@@ -1,0 +1,68 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<link rel="stylesheet" href="~/css/main.css" asp-append-version="true">
+
+<div class="title">
+    <h2>@Model.Title</h2>
+</div>
+
+<div style="display:flex;align-items:center;justify-content:center; margin-bottom: 3%;">
+    <form asp-page="/Products" method="get">
+        <input id="addproduct" type="text" name="isadd" value="add" style="display:none;" />
+        <button class="submitbtn" type="submit" style="border:none;">Add product</button>
+    </form>
+</div>
+
+
+<div id="products" style="display:none">
+    @Model.jsonprod
+</div>
+
+
+<div id="categories" style="display:none">
+    @Model.jsoncat
+</div>
+
+<div id="page">
+    <div id="filter-content">
+        <div style="display:flex;align-items:center;justify-content:center;width:100%;height:50px;"> 
+            <form asp-page="/Index" asp-page-handler="view" method="post">
+                <input id="productinput" type="text" name="searchproduct" placeholder="Enter Product name" required minlength="3"/>
+                <button id="searchbtn" type="submit">S</button>
+            </form>
+        </div>
+    <div id="filter">
+        <div class="buttons">
+            <form asp-page="/Category" method="get">
+                <input id="addcategory" type="text" name="isadd" value="add" style="display:none;" />
+                <button class="submitbtn" type="submit" style="border:none;">Add category</button>
+            </form>
+            <form asp-page="/Category" method="get">
+                <input id="delcategory" type="text" name="isadd" value="delete" style="display:none;" />
+                <button class="submitbtn" type="submit" style="border:none;margin-left: 2%;">Delete category</button>
+            </form>
+        </div>
+        <form asp-page="/Index" method="post">
+            <input id="categoryinput" type="text" name="category" value="" style="display:none;" />
+            <ul id="categoryid">
+            </ul>
+            <button id="catbtn" type="submit" style="display:none;"></button>
+        </form>
+    </div>
+     </div>
+    <div id="content">
+        <form id="form-content" asp-page="/Products" asp-page-handler="delete" method="post">
+            <input id="inputprod" type="text" name="productname" value="" style="display:none;" />
+            <button id="delbtn" type="submit" style="display:none;"></button>
+        </form>
+    </div>
+</div>
+
+<script src="~/js/main.js" asp-append-version="true"></script>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+

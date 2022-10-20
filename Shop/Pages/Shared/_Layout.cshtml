@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Shop</title>
+</head>
+<body>
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true">
+
+    <!-- NAVBAR -->
+    <div class="nav">
+        <header id="navpanel" tabindex="0">
+            <a class="nav-link text-dark" asp-area="" asp-page="/Index"><button class="navbtn">Home</button></a>
+            <a class="nav-link text-dark other" asp-area="" asp-page="/Login"><button id="loginbtn" class="navbtn" style="display:none">Login</button></a>
+            <a class="nav-link text-dark other" asp-area="" asp-page="/Cart"><button id="cartbtn" class="navbtn" style="display:none;">Cart</button></a>
+            <a class="nav-link text-dark other" asp-area="" asp-page="/Index"><button id="logoutbtn" class="navbtn" style="display:none">Logout</button></a>
+        </header>
+    </div>
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    @*
+        <footer class="border-top footer text-muted">
+        <div class="container">
+        &copy; 2022 - Shop - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+        </footer>*@
+
+    <script src="~/js/login.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

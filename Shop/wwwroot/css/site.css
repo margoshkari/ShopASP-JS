@@ -1,0 +1,29 @@
+﻿.nav {
+    width: 100%;
+    height: 50px;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    font-weight: 600;
+    letter-spacing: .03em;
+    color: #212121;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.navbtn {
+    border-radius: 5px;
+    border: none;
+    width: 90px;
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+.navbtn:hover{
+    background-color: rgb(195, 195, 195)
+}
+.other {
+    text-decoration: none;
+}

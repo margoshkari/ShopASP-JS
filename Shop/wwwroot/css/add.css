@@ -1,0 +1,36 @@
+﻿
+.content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+
+form {
+    width: 700px;
+    border: 3px solid #f1f1f1;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=number] {
+    width: 100%;
+    margin: 8px 0;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 2px solid green;
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 25px;
+}
+
+.submitbtn, .registerbtn {
+    border-radius: 5px;
+    border: none;
+    width: 90px;
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+}
